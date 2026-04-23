@@ -6,67 +6,95 @@
     <title>Professional Portfolio</title>
     <style>
         :root {
-            --bg: #fdfdfd;
-            --text: #2d3436;
-            --accent: #0984e3;
-            --secondary: #636e72;
+            --bg: #ffffff;
+            --text: #1d1d1f;
+            --accent: #0071e3;
+            --secondary: #86868b;
+            --nav-bg: rgba(255, 255, 255, 0.8);
         }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); margin: 0; padding: 0; }
-        header { padding: 4rem 2rem; text-align: center; background: #fff; border-bottom: 1px solid #eee; }
-        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.5; color: var(--text); background: var(--bg); margin: 0; scroll-behavior: smooth; }
+
+        /* Navigation Menu */
+        nav { position: fixed; top: 0; width: 100%; background: var(--nav-bg); backdrop-filter: blur(10px); border-bottom: 1px solid #d2d2d7; z-index: 1000; padding: 1rem 0; }
+        .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
+        .nav-links a { text-decoration: none; color: var(--text); margin-left: 2rem; font-weight: 400; font-size: 0.9rem; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* Hero Section */
+        header { height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #f5f5f7; padding-top: 60px; }
+        header h1 { font-size: 3rem; margin: 0; letter-spacing: -0.02em; }
+        header p { font-size: 1.25rem; color: var(--secondary); }
+
+        /* Vertical Project Sections */
+        section { padding: 100px 2rem; max-width: 1000px; margin: 0 auto; border-bottom: 1px solid #f5f5f7; }
+        .project-content { display: flex; flex-direction: column; gap: 2rem; }
         
-        /* The Portfolio Grid */
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .card { background: white; border: 1px solid #eee; border-radius: 8px; overflow: hidden; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .card-img { width: 100%; height: 200px; background: #dfe6e9; object-fit: cover; }
-        .card-content { padding: 1.5rem; }
+        .project-image { width: 100%; height: 400px; background: #fbfbfd; border-radius: 18px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .project-image img { width: 100%; height: 100%; object-fit: cover; }
         
-        /* Text-Heavy Sections */
-        .deep-dive { margin-top: 4rem; padding-top: 2rem; border-top: 2px solid #eee; }
-        h1, h2 { color: var(--accent); }
-        .mentorship-tag { display: inline-block; background: #e1f5fe; color: #01579b; padding: 2px 10px; border-radius: 20px; font-size: 0.8rem; margin-bottom: 10px; }
-        footer { text-align: center; padding: 4rem; color: var(--secondary); font-size: 0.9rem; }
+        .project-text { max-width: 700px; }
+        .project-text h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .project-text p { font-size: 1.1rem; color: #424245; margin-bottom: 1.5rem; }
+
+        .tag { display: inline-block; padding: 4px 12px; background: #e8e8ed; border-radius: 20px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; }
+
+        footer { text-align: center; padding: 4rem; color: var(--secondary); background: #f5f5f7; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Your Name</h1>
-    <p>Researcher • Educator • Developer</p>
-</header>
-
-<div class="container">
-    <h2>Featured Projects</h2>
-    <div class="project-grid">
-        <div class="card">
-            <div class="card-img" style="background: url('your-image-1.jpg') center/cover;"></div>
-            <div class="card-content">
-                <h3>Technical Analysis Project</h3>
-                <p>A brief summary of your work, highlighting the primary visual output or data result.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-img" style="background: #e3f2fd; display: flex; align-items: center; justify-content: center;">📚</div>
-            <div class="card-content">
-                <span class="mentorship-tag">Mentorship</span>
-                <h3>Undergraduate Research Series</h3>
-                <p>Highlighting experience in guiding others and professional speaking roles.</p>
-            </div>
+<nav>
+    <div class="nav-container">
+        <strong>Portfolio</strong>
+        <div class="nav-links">
+            <a href="#research">Research</a>
+            <a href="#writing">Writing Samples</a>
+            <a href="#blog">Blog</a>
         </div>
     </div>
+</nav>
 
-    <section class="deep-dive">
-        <h2>Technical Methodology & Deep Dives</h2>
-        <article>
-            <h3>Project Alpha: Experimental Design</h3>
-            <p>This is where you can be as text-heavy as you like. Describe your protocols, your data analysis workflows, and your technical stack. For example, you could detail how you automated specific data collection tasks or managed complex laboratory environments.</p>
-            <blockquote>
-                "Detailed insight: Use these blocks to highlight key findings or professional philosophies."
-            </blockquote>
-        </article>
-    </section>
-</div>
+<header>
+    <h1>Your Name</h1>
+    <p>Biomedical Research & Educational Mentorship</p>
+</header>
+
+<section id="research">
+    <div class="project-content">
+        <span class="tag">Primary Research</span>
+        <div class="project-text">
+            <h2>Advancements in Mycelium Scaffolding</h2>
+            <p>A deep dive into the development of fungal-derived biomaterials. This section allows you to detail your experimental designs, cell viability data, and laboratory methodologies in a long-form, readable format.</p>
+        </div>
+        <div class="project-image">
+            <img src="research-image.jpg" alt="Laboratory Data Visual">
+        </div>
+    </div>
+</section>
+
+<section id="writing">
+    <div class="project-content">
+        <span class="tag">Writing Samples</span>
+        <div class="project-text">
+            <h2>Analysis & Methodology</h2>
+            <p>From ImageJ macro documentation to formal research posters. You can paste snippets of your code or technical summaries here to demonstrate your analytical approach.</p>
+        </div>
+        <div class="project-image" style="background: #eef2f3;">
+            <p style="color: #999;">[Upload a PDF preview or screenshot here]</p>
+        </div>
+    </div>
+</section>
+
+<section id="blog">
+    <div class="project-content">
+        <span class="tag">Blog & Mentorship</span>
+        <div class="project-text">
+            <h2>Guiding the Next Generation</h2>
+            <p>Thoughts on undergraduate mentorship, serving as a panelist for speaker series, and the intersection of education and engineering.</p>
+        </div>
+    </div>
+</section>
 </body>
 </html>
