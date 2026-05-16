@@ -5,15 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research | Portfolio</title>
     <style>
-        :root { --bg: #ffffff; --text: #1d1d1f; --accent: #0071e3; --secondary: #86868b; --nav-bg: rgba(255, 255, 255, 0.8); }
-        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: var(--bg); margin: 0; padding-top: 80px; }
+        :root { 
+            --bg: #ffffff; 
+            --text: #1d1d1f; 
+            --accent: #0071e3; 
+            --secondary: #86868b; 
+            --nav-bg: rgba(255, 255, 255, 0.8); 
+        }
+        * { box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            color: var(--text); 
+            background: var(--bg); 
+            margin: 0; 
+            padding-top: 100px; 
+        }
+        
+        /* Navigation (Updated to include 'Journal') */
         nav { position: fixed; top: 0; width: 100%; background: var(--nav-bg); backdrop-filter: blur(10px); border-bottom: 1px solid #d2d2d7; z-index: 1000; padding: 1rem 0; }
         .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
         .nav-links a { text-decoration: none; color: var(--text); margin-left: 2rem; font-size: 0.9rem; }
         .nav-links a:hover { color: var(--accent); }
-        .container { max-width: 800px; margin: 0 auto; padding: 2rem; }
-        h1 { font-size: 2.5rem; margin-bottom: 2rem; }
-        .image-placeholder { width: 100%; height: 350px; background: #f5f5f7; border-radius: 12px; margin: 2rem 0; display: flex; align-items: center; justify-content: center; color: var(--secondary); }
+        
+        /* Main Container */
+        .container { max-width: 900px; margin: 0 auto; padding: 0 2rem 4rem 2rem; }
+        h1 { font-size: 2.5rem; margin-bottom: 3rem; }
+        
+        /* Project Rows */
+        .project-item { margin-bottom: 5rem; }
+        
+        /* Split Header: Title Left, Date Right */
+        .project-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: flex-end; 
+            border-bottom: 1px solid #e8e8ed;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            gap: 2rem;
+        }
+        .project-title { font-size: 1.35rem; font-weight: 600; margin: 0; line-height: 1.3; }
+        .project-date { font-size: 1rem; color: var(--secondary); white-space: nowrap; margin: 0; }
+        
+        /* Linked Desktop-Background Style Images */
+        .project-link { display: block; width: 100%; border-radius: 14px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .project-link:hover { transform: scale(1.01); box-shadow: 0 12px 24px rgba(0,0,0,0.08); }
+        
+        .project-img { 
+            width: 100%; 
+            height: 450px; 
+            object-fit: cover; 
+            display: block;
+            background: #f5f5f7; /* Displays if image is loading or missing */
+        }
+        
+        /* Mobile adjustment for split header */
+        @media (max-width: 600px) {
+            .project-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+            .project-img { height: 280px; }
+        }
     </style>
 </head>
 <body>
@@ -32,12 +82,67 @@
 
 <div class="container">
     <h1>Scientific Research</h1>
-    <p>This page is dedicated to long-form descriptions of your primary laboratory projects. You can list your methodologies, hypotheses, and conclusions here in heavy detail.</p>
-    
-    <div class="image-placeholder">[Your Research Image/Chart Goes Here]</div>
-    
-    <h3>Project Methodology</h3>
-    <p>Add your step-by-step scientific processes or system descriptions here.</p>
+
+    <div class="project-item">
+        <div class="project-header">
+            <h2 class="project-title">Seeing Cells with Computer Vision</h2>
+            <p class="project-date">08/2025 - 05/2025</p>
+        </div>
+        <a href="journal-cells.html" class="project-link">
+            <img src="project1.jpg" alt="Seeing Cells with Computer Vision" class="project-img">
+        </a>
+    </div>
+
+    <div class="project-item">
+        <div class="project-header">
+            <h2 class="project-title">Exploration of Mycelium Cell Wall as Extracellular Scaffold</h2>
+            <p class="project-date">07/2025 - 05/2025</p>
+        </div>
+        <a href="journal-mycelium.html" class="project-link">
+            <img src="project2.jpg" alt="Exploration of Mycelium Cell Wall" class="project-img">
+        </a>
+    </div>
+
+    <div class="project-item">
+        <div class="project-header">
+            <h2 class="project-title">A Direct Replication of Cameron et al. (2019)</h2>
+            <p class="project-date">01/2026 - 05/2026</p>
+        </div>
+        <a href="journal-replication.html" class="project-link">
+            <img src="project3.jpg" alt="Direct Replication Study" class="project-img">
+        </a>
+    </div>
+
+    <div class="project-item">
+        <div class="project-header">
+            <h2 class="project-title">High Fiber Diets in Okinawa Japan and the Progression of Alzheimer's Disease</h2>
+            <p class="project-date">08/2025 - 12/2025</p>
+        </div>
+        <a href="journal-alzheimers.html" class="project-link">
+            <img src="project4.jpg" alt="Alzheimer's and Diet Study" class="project-img">
+        </a>
+    </div>
+
+    <div class="project-item">
+        <div class="project-header">
+            <h2 class="project-title">Humanity’s Effect on the Vulnerability and Restoration of the American Horseshoe Crab, Limulus polyphemus, in the Northeast Gulf of Mexico</h2>
+            <p class="project-date">08/2024 - 12/2024</p>
+        </div>
+        <a href="journal-horseshoecrab.html" class="project-link">
+            <img src="project5.jpg" alt="American Horseshoe Crab Study" class="project-img">
+        </a>
+    </div>
+
+    <div class="project-item">
+        <div class="project-header">
+            <h2 class="project-title">Organoids and Their Application in Organogenesis Research</h2>
+            <p class="project-date">01/2022 - 05/2022</p>
+        </div>
+        <a href="journal-organoids.html" class="project-link">
+            <img src="project6.jpg" alt="Organoids Research" class="project-img">
+        </a>
+    </div>
+
 </div>
 
 </body>
