@@ -3,43 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Portfolio</title>
+    <title>Professional Portfolio | Home</title>
     <style>
-        :root {
-            --bg: #ffffff;
-            --text: #1d1d1f;
-            --accent: #0071e3;
-            --secondary: #86868b;
-            --nav-bg: rgba(255, 255, 255, 0.8);
-        }
-
+        :root { --bg: #ffffff; --text: #1d1d1f; --accent: #0071e3; --secondary: #86868b; --nav-bg: rgba(255, 255, 255, 0.8); }
         * { box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.5; color: var(--text); background: var(--bg); margin: 0; scroll-behavior: smooth; }
-
-        /* Navigation Menu */
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.5; color: var(--text); background: var(--bg); margin: 0; }
+        
+        /* Navigation (Same on all pages) */
         nav { position: fixed; top: 0; width: 100%; background: var(--nav-bg); backdrop-filter: blur(10px); border-bottom: 1px solid #d2d2d7; z-index: 1000; padding: 1rem 0; }
         .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
-        .nav-links a { text-decoration: none; color: var(--text); margin-left: 2rem; font-weight: 400; font-size: 0.9rem; transition: color 0.3s; }
+        .nav-links a { text-decoration: none; color: var(--text); margin-left: 2rem; font-size: 0.9rem; }
         .nav-links a:hover { color: var(--accent); }
 
-        /* Hero Section */
-        header { height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #f5f5f7; padding-top: 60px; }
-        header h1 { font-size: 3rem; margin: 0; letter-spacing: -0.02em; }
-        header p { font-size: 1.25rem; color: var(--secondary); }
+        /* Hero Header */
+        header { height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #f5f5f7; padding-top: 60px; }
+        header h1 { font-size: 3rem; margin: 0 0 1rem 0; }
+        header p { font-size: 1.2rem; color: var(--secondary); margin: 0; line-height: 1.8; }
 
-        /* Vertical Project Sections */
-        section { padding: 100px 2rem; max-width: 1000px; margin: 0 auto; border-bottom: 1px solid #f5f5f7; }
-        .project-content { display: flex; flex-direction: column; gap: 2rem; }
-        
-        .project-image { width: 100%; height: 400px; background: #fbfbfd; border-radius: 18px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-        .project-image img { width: 100%; height: 100%; object-fit: cover; }
-        
-        .project-text { max-width: 700px; }
-        .project-text h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .project-text p { font-size: 1.1rem; color: #424245; margin-bottom: 1.5rem; }
-
+        /* Preview Sections */
+        .container { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
+        .preview-section { margin-bottom: 4rem; padding-bottom: 4rem; border-bottom: 1px solid #e8e8ed; }
         .tag { display: inline-block; padding: 4px 12px; background: #e8e8ed; border-radius: 20px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; }
-
+        h2 { font-size: 2rem; margin: 0 0 1rem 0; }
+        p { font-size: 1.1rem; color: #424245; }
+        
+        /* Read More Buttons */
+        .cta-btn { display: inline-block; margin-top: 1rem; color: var(--accent); text-decoration: none; font-weight: 500; }
+        .cta-btn:hover { text-decoration: underline; }
         footer { text-align: center; padding: 4rem; color: var(--secondary); background: #f5f5f7; }
     </style>
 </head>
@@ -49,53 +39,45 @@
     <div class="nav-container">
         <strong>Portfolio</strong>
         <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#research">Research</a>
-            <a href="#writing">Writing Samples</a>
-            <a href="#blog">Blog</a>
+            <a href="index.html">Home</a>
+            <a href="research.html">Research</a>
+            <a href="writing.html">Writing Samples</a>
+            <a href="blog.html">Blog</a>
         </div>
     </div>
 </nav>
 
-<header id="home">
+<header>
     <h1>Your Name</h1>
-    <p>Biomedical Research & Educational Mentorship</p>
+    <p>BS Biomedical Sciences<br>BS Psychological Sciences</p>
 </header>
 
-<section id="research">
-    <div class="project-content">
-        <span class="tag">Primary Research</span>
-        <div class="project-text">
-            <h2>Advancements in Mycelium Scaffolding</h2>
-            <p>A deep dive into the development of fungal-derived biomaterials. This section allows you to detail your experimental designs, cell viability data, and laboratory methodologies in a long-form, readable format.</p>
-        </div>
-        <div class="project-image">
-            <img src="research-image.jpg" alt="Laboratory Data Visual">
-        </div>
-    </div>
-</section>
+<div class="container">
+    <section class="preview-section">
+        <span class="tag">Explore</span>
+        <h2>Scientific Research</h2>
+        <p>A high-level overview of laboratory methodologies, experimental setups, and ongoing data analysis projects.</p>
+        <a href="research.html" class="cta-btn">View Full Research Portfolio →</a>
+    </section>
 
-<section id="writing">
-    <div class="project-content">
-        <span class="tag">Writing Samples</span>
-        <div class="project-text">
-            <h2>Analysis & Methodology</h2>
-            <p>From ImageJ macro documentation to formal research posters. You can paste snippets of your code or technical summaries here to demonstrate your analytical approach.</p>
-        </div>
-        <div class="project-image" style="background: #eef2f3;">
-            <p style="color: #999;">[Upload a PDF preview or screenshot here]</p>
-        </div>
-    </div>
-</section>
+    <section class="preview-section">
+        <span class="tag">Documentation</span>
+        <h2>Writing Samples</h2>
+        <p>Technical briefs, abstract submissions, and formal project documentation showcasing analytical communication skills.</p>
+        <a href="writing.html" class="cta-btn">Read Writing Samples →</a>
+    </section>
 
-<section id="blog">
-    <div class="project-content">
-        <span class="tag">Blog & Mentorship</span>
-        <div class="project-text">
-            <h2>Guiding the Next Generation</h2>
-            <p>Thoughts on undergraduate mentorship, serving as a panelist for speaker series, and the intersection of education and engineering.</p>
-        </div>
-    </div>
-</section>
+    <section class="preview-section">
+        <span class="tag">Updates</span>
+        <h2>The Blog</h2>
+        <p>Perspectives on undergraduate mentorship, professional development, and navigating academic landscapes.</p>
+        <a href="blog.html" class="cta-btn">Visit the Blog →</a>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2026 | Built with Gemini</p>
+</footer>
+
 </body>
 </html>
