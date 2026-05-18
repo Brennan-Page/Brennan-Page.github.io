@@ -58,7 +58,20 @@
             0% { transform: translateX(-50%); }
             100% { transform: translateX(0); }
         }
-
+        
+        /* Circular Profile Headshot */
+        .profile-headshot {
+            width: 130px; /* Adjust size as needed */
+            height: 130px;
+            border-radius: 50%; /* Makes it a perfect circle */
+            object-fit: cover; /* Centers and crops your photo without squishing it */
+            border: 5px solid #ffffff; /* The circular border user requested */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Adds a subtle shadow for depth */
+            margin-bottom: 1.5rem; /* Spacing between photo and your name */
+            background: #e8e8ed; /* Displays a gray circle while the image loads */
+            display: inline-block; /* Essential for correct centering */
+        }
+        
         /* Floating White Profile Card */
         .profile-card {
             position: relative;
@@ -138,6 +151,8 @@
     </div>
 
     <div class="profile-card">
+        <img src="images/Headshot.png" alt="Brennan Page Headshot" class="profile-headshot">
+        
         <h1>Brennan Page</h1>
         <p>BS Biomedical Sciences<br>BS Psychological Sciences</p>
     </div>
